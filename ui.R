@@ -22,11 +22,6 @@ shinyUI(
                    #user-interface with a navigation bar.
                    tabPanel("Explore Longley Data",
                             sidebarPanel(
-                                    sliderInput("Year", 
-                                                "Timeline:", 
-                                                min = min(data$Year),
-                                                max = min(data$Year)),
-                                                value = c(min, max)),
                                     sliderInput("Population", 
                                                 "Population:",
                                                 min = 107.608,
