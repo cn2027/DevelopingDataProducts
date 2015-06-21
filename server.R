@@ -24,11 +24,11 @@ shinyServer(
                 )
                 
                 output$plotPopulationByYear <- renderChart({
-                        plotPopulationByYear(dt) 
+                        plotPopulationByYear(data) 
                 })
                 
                 output$PopulationByEpoch <- renderChart({
-                        PopulationByEpoch(dt)
+                        PopulationByEpoch(data)
                 })
                 
         } # end of function(input, output)
