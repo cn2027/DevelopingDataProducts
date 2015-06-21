@@ -39,7 +39,7 @@ shinyUI(
                                                      plotOutput("plotPopulationByYear","400px"),
                                                      h4('Population by Epoch', align = "center"),
                                                         plotOutput("PopulationByEpoch")
-                                            ), # end of "Interact with the Data" tab panel
+                                            ) # end of "Interact with the Data" tab panel
                                             
                                     )
                                     
