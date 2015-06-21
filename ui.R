@@ -24,8 +24,8 @@ shinyUI(
                             sidebarPanel(
                                     sliderInput("Year", 
                                                 "Timeline:", 
-                                                min = as.Date("1947","%Y"),
-                                                max = as.Date("1962","%Y"),
+                                                min = min(data$Year),
+                                                max = min(data$Year)),
                                                 value = c(min, max)),
                                     sliderInput("Population", 
                                                 "Population:",
