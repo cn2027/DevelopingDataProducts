@@ -24,9 +24,9 @@ shinyUI(
                             sidebarPanel(
                                     sliderInput("Population", 
                                                 "Population:",
-                                                min = 107.608,
-                                                max = 130.081,
-                                                value = c(116, 128) 
+                                                min = 107608000,
+                                                max = 130081000,
+                                                value = c(116000000, 128000000) 
                                     ),
                             mainPanel(
                                     tabsetPanel(
