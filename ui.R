@@ -37,6 +37,10 @@ shinyUI(
                                             tabPanel(p(icon("line-chart"), "Interact with the Data"), 
                                                      h4('Population by Year', align = "center"),
                                                      plotOutput("plotPopulationByYear","400px")
+                                            ), # end of "Interact with the Data" tab panel
+                                            tabPanel(p(icon("line-chart"), "Interact with the Data"), 
+                                                     h4('Population by Year', align = "center"),
+                                                     plotOutput("plotPopulationByYear","400px")
                                             ) # end of "Interact with the Data" tab panel
                                             
                                     )
