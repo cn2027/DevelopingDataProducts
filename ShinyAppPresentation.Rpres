@@ -1,0 +1,98 @@
+Longley Economic Data ShinyApp
+========================================================
+author: CN2027
+date: 06/21/2015
+
+First Slide
+========================================================
+
+- Welcome to the Longley Economic Regression Data Visualizer
+- Here you get to experience the Longley data in a new way
+- Take a closer look at how the population varies over the years!
+- Get ready to have some fun with some cool data!
+
+Second Slide
+========================================================
+
+```{r}
+pkgTest <- function(x)
+{
+        if (!require(x,character.only = TRUE))
+        {
+                install.packages(x,dep=TRUE)
+                if(!require(x,character.only = TRUE)) stop("Package not found")
+        }
+}
+
+# Load required libraries
+pkgTest("data.table")
+pkgTest("sqldf")
+pkgTest("dplyr")
+#pkgTest("DT")
+pkgTest("rCharts")
+
+head(longley)
+setnames(longley, "GNP.deflator", "GNPDeflator")
+setnames(longley, "Armed.Forces", "ArmedForces")
+setnames(longley, "Population", "population")
+#longley$Year<-as.character(data$Year)
+longley$Population<-1000000*longley$population
+data<- longley
+# Exploratory data analysis
+sum(is.na(data)) # 0
+length(unique(data$GNPDeflator)) # 16
+table(data$Year) # 1947 - 1962
+length(table(data$Year)) # 16
+
+```
+
+Third Slide
+========================================================
+- Take a look at how population varies over the years
+
+```{r, echo=TRUE}
+plotPopulationByYear <- function(dt){
+        PopulationByYear <- ggplot(data = dt, 
+                                    mapping=aes(x=Year,
+                                    y = Population,color=Population))
+        PopulationByYear<- PopulationByYear +  geom_point()
+        PopulationByYear<- PopulationByYear + scale_color_gradient2(low = "blue", mid = "white", high = "green", midpoint = median(data$Population))
+        return(PopulationByYear)
+}
+
+```
+Fourth Slide
+========================================================
+- Take a look at how population varies before and after 1955
+
+```{r, echo=TRUE}
+GroupBy1955 <- function(dt) {
+        this.subset<-dt[c(1:8),]
+        this.subset["Before1955"] <- 1
+        this.subset2 <- dt[c(9:16),]
+        this.subset2["Before1955"] <- 0
+        result<-rbind(this.subset,this.subset2)
+        return(result)
+}
+
+PopulationByEpoch <- function(dt){
+        Grouped<-GroupBy1955(dt)
+        PopulationByEpoch <- qplot(factor(Before1955),
+                y = Population,
+                data = Grouped, 
+                geom=c("boxplot","jitter"),
+                xlab="Epoch",
+                ylab="Population")
+        PopulationByEpoch<- PopulationByEpoch + scale_x_discrete(breaks=c(0,1), labels=c("Before 1955","After 1955"))
+        return(PopulationByEpoch)
+}
+
+```
+
+
+Fifth Slide
+========================================================
+
+- Hope you enjoyed the Longley Economic Regression Data Visualizer
+- Please give this shinyApp a shot!
+-Reference: J. W. Longley (1967) An appraisal of least-squares programs from the point of view of the user. Journal of the American Statistical Association 62, 819–841.
