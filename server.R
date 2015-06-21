@@ -23,11 +23,11 @@ shinyServer(
                 } #, options = list(bFilter = FALSE, iDisplayLength = 50)
                 )
                 
-                output$plotPopulationByYear <- renderChart({
+                output$plotPopulationByYear <- renderPlot({
                         plotPopulationByYear(data) 
                 })
                 
-                output$PopulationByEpoch <- renderChart({
+                output$PopulationByEpoch <- renderPlot({
                         PopulationByEpoch(data)
                 })
                 
