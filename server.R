@@ -26,8 +26,5 @@ shinyServer(
                 output$plotPopulationByYear <- renderPlot({
                         plotPopulationByYear(data) 
                 })
-                 output$PopulationByEpoch <- renderPlot({
-                        PopulationByEpoch(data)
-                })
         } # end of function(input, output)
 )
