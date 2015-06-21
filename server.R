@@ -31,9 +31,5 @@ shinyServer(
                         PopulationByEpoch(dt)
                 })
                 
-                output$piecesByThemeAvg <- renderChart({
-                        piecesByThemeAvg(dt)
-                })
-                
         } # end of function(input, output)
 )
