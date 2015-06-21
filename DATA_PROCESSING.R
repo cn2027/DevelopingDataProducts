@@ -21,8 +21,10 @@ data <- longley
 head(data)
 setnames(data, "GNP.deflator", "GNPDeflator")
 setnames(data, "Armed.Forces", "ArmedForces")
+setnames(data, "Population", "population")
 data$Year<-as.character(data$Year)
 data$Year<-as.Date(data$Year,"%Y")
+data$Population<-1000000*data$population
 # Exploratory data analysis
 sum(is.na(data)) # 0
 length(unique(data$GNPDeflator)) # 16
