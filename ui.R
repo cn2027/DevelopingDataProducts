@@ -41,7 +41,7 @@ shinyUI(
                                                         align ="center"),
                                                      plotOutput("PopulationByEpoch"),
                                                      h4('Unemployement by Year', align = "center"),
-                                                     plotOutput("plotUnemploymentByYear"),
+                                                     plotOutput("plotUnemploymentByYear")
                                             ) # end of "Interact with the Data" tab panel
                                             
                                     )
