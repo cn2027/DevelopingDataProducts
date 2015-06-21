@@ -26,7 +26,7 @@ shinyUI(
                                                 "Population:",
                                                 min = 107608000,
                                                 max = 130081000,
-                                                value = c(116000000, 128000000) 
+                                                value = c(116000000, 128000000)) 
                                     ),
                             mainPanel(
                                     tabsetPanel(
@@ -41,7 +41,7 @@ shinyUI(
                                             
                                     )
                                     
-                            )     
+                                
                    ), # end of "Interact with the Data" tab panel
                    
                    tabPanel("Explore Longley Data",
@@ -49,6 +49,8 @@ shinyUI(
                                     includeMarkdown("AboutLongley.Rmd")
                             )
                    ) # end of "About" tab panel
-                   )
+                  
         
         )
+        
+)
