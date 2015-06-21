@@ -36,14 +36,12 @@ shinyUI(
                                             ), # end of "DATASET" tab panel
                                             tabPanel(p(icon("line-chart"), "Interact with the Data"), 
                                                      h4('Population by Year', align = "center"),
-                                                     showOutput("plotPopulationByYear", "nvd3"),
+                                                     plotOutput("plotPopulationByYear"),
                                                      h4('Population by Epoch', align = "center"),
                                                         align ="center"),
-                                                     showOutput("PopulationByEpoch", "nvd3"),
+                                                     plotOutput("PopulationByEpoch"),
                                                      h4('Unemployement by Year', align = "center"),
-                                                     showOutput("plotUnemploymentByYear", "nvd3"),
-                                                     h5('Hover over each point to see the Year and Unemployement'), 
-                                                     showOutput("piecesByThemeAvg", "nvd3")
+                                                     plotOutput("plotUnemploymentByYear"),
                                             ) # end of "Interact with the Data" tab panel
                                             
                                     )
