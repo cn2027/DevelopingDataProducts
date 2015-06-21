@@ -58,9 +58,9 @@ plotPopulationByYear <- function(dt){
 #' @return result
 #'
 GroupBy1955 <- function(dt) {
-        this.subset<-subset(dt,Year < 1955)
+        this.subset<-dt[c(1:8),]
         this.subset["Before1955"] <- 1
-        this.subset2 <- subset(dt,Year >= 1955)
+        this.subset2 <- dt[c(9:16),]
         this.subset2["Before1955"] <- 0
         result<-rbind(this.subset,this.subset2)
         return(result)
