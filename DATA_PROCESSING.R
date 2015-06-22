@@ -14,6 +14,7 @@ pkgTest("sqldf")
 pkgTest("dplyr")
 #pkgTest("DT")
 pkgTest("rCharts")
+pkgTest("ggplot2")
 
 # Read data
 data("longley")
