@@ -1,3 +1,5 @@
+### Please go to http://127.0.0.1:5357 for ShinyApp link
+
 ## Developing Data Products Project - Longley Economic Regression Data Visualize
 This Shiny App is for visulizating the Longley Economic Regression Data from year 1947 to 1962 for a total of 16 years.
 
